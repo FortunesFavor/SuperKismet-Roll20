@@ -25,10 +25,6 @@
     display: inline-block;
     width: 10em;
 }
-/* .sheet-h-check {
-    display: inline-block;
-    width: 1em;
-}*/
 
 .sheet-half {
     max-width: 50%;
@@ -103,8 +99,8 @@ button {
     min-width: 400px;
 }
 
-.sheet-section-skills input {
-    width: 60px;
+.sheet-section-skills input[type="text"] {
+    width: 12em;
 }
 
 .sheet-skill-on {
