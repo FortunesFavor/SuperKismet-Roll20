@@ -1,0 +1,2 @@
+# Show as Token Action = True
+@{Selected|token_name} rolls initiative: [[1d20-@{Selected|Reflexes} &{tracker}]]
