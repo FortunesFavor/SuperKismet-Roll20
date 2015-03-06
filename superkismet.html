@@ -1,0 +1,191 @@
+
+<div class="sheet-section-basic sheet-section">
+    <img class="sheet-logo" src="http://i.imgur.com/aq2UzDb.png" alt="KISMET" />
+    <table>
+        <tr>
+            <td>
+                <label>Real Name</label>
+                <input type="text" name="attr_ID" />
+            </td>
+            <td>
+                <label>Alias</label>
+                <input type="text" name="attr_Refresh" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Description</label>
+                <input type="text" name="attr_Description" />
+            </td>
+            <td>
+                <label>Level</label>
+                <input type="number" name="attr_Level" value="1" />
+            </td>
+
+        </tr>
+    </table>
+</div> <!-- .section-basic -->
+
+<div class="sheet-break"></div>
+
+<div class="sheet-section-aspects sheet-section">
+    <div class="sheet-header">Aspects</div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_AlterEgo" placeholder="Alter Ego Aspect" />
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_SecretIdentity" placeholder="Secret Identity Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_OriginStory" placeholder="Origin Story Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_HomeTurf" placeholder="Home Turf Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_MoralCode" placeholder="Moral Code Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_Dilemma" placeholder="Dilema Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_Nemesis" placeholder="Nemesis Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_Help" placeholder="Help Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_Aptitude" placeholder="Aptitude Aspect"/>
+    </div>
+    <div class="sheet-repitem">
+        <input type="text" name="attr_Weakness" placeholder="Weakness Aspect"/>
+    </div>
+    <fieldset class="repeating_Aspects">
+        <input type="text" name="attr_Aspect" />
+    </fieldset>
+</div> <!-- .section-aspects -->
+
+<div class="sheet-break"></div>
+
+<div class="sheet-section-consequences sheet-section sheet-half sheet-nobul">
+    <div class="sheet-header">Health</div>
+    <input type="hidden" name="attr_Damage_max" value="4" />
+    <ul>
+        <li>
+            <label class="sheet-h-label">Armored</label>
+            <input type="radio" name="attr_Damage" value="4" />
+        </li>
+        <li>
+            <label class="sheet-h-label">Healthy</label>
+            <input type="radio" name="attr_Damage" value="3" checked="true" />
+        </li>
+        <li>
+            <label class="sheet-h-label">Injured</label>
+            <input type="radio" name="attr_Damage" value="2" />
+        </li>
+        <li>
+            <label class="sheet-h-label">Wounded</label>
+            <input type="radio" name="attr_Damage" value="1" />
+        </li>
+        <li>
+            <label class="sheet-h-label">Incapacitated</label>
+            <input type="radio" name="attr_Damage" value="0" />
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <label class="sheet-h-label">Action Points</label>
+            <input type="number" name="attr_ap" value="@{Level}*20" /> / <input type="number" name="attr_ap_max" value="@{Level}*20"  disabled="true" />
+        </li>
+        <li>
+            <label class="sheet-h-label">Edge</label>
+            <input type="number" name="attr_Edge" value="@{Level}" /> / <input type="number" name="attr_Edge_max" value="@{Level}"  disabled="true" />
+        </li>
+    </ul>
+</div>
+
+<div class="sheet-section-skills sheet-section sheet-half sheet-nobul">
+    <div class="sheet-header">Attributes</div>
+    <ul>
+        <li>
+            <div>
+                <label>Body</label>
+                <input type="number" name="attr_Body">
+                <button type="roll" value="/roll 1d20<@{Body} Body" name="roll_Body"/>
+            </div>
+            <ul>
+                <fieldset class="repeating_BodySkills">
+                    <li>
+                        <input type="text" name="attr_skillname" />
+                        <input type="number" name="attr_skilllevel" />
+                        <input type="hidden" name="attr_skillmod" value="@{skilllevel}+@{Body}" disabled="true" /> 
+                        <button type="roll" value="/roll 1d20<@{skillmod} Body: @{skillname}" name="roll_skillcheck"/>
+                    </li>
+                </fieldset>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <label>Reflexes</label>
+                <input type="number" name="attr_Reflexes">
+                <button type="roll" value="/roll 1d20<@{Reflexes} Reflexes" name="roll_Reflexes"/>
+            </div>
+            <ul>
+                <fieldset class="repeating_ReflexesSkills">
+                    <li>
+                        <input type="text" name="attr_skillname" />
+                        <input type="number" name="attr_skilllevel" />
+                        <input type="hidden" name="attr_skillmod" value="@{skilllevel}+@{Reflexes}" disabled="true" /> 
+                        <button type="roll" value="/roll 1d20<@{skillmod} Reflexes: @{skillname}" name="roll_skillcheck"/>
+                    </li>
+                </fieldset>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <label>Wits</label>
+                <input type="number" name="attr_Wits">
+                <button type="roll" value="/roll 1d20<@{Wits} Wits" name="roll_Wits"/>
+            </div>
+            <ul>
+                <fieldset class="repeating_WitsSkills">
+                    <li>
+                        <input type="text" name="attr_skillname" />
+                        <input type="number" name="attr_skilllevel" />
+                        <input type="hidden" name="attr_skillmod" value="@{skilllevel}+@{Wits}" disabled="true" /> 
+                        <button type="roll" value="/roll 1d20<@{skillmod} Wits: @{skillname}" name="roll_skillcheck"/>
+                    </li>
+                </fieldset>
+            </ul>
+        </li>
+        <li>
+            <div>
+                <label>Persona</label>
+                <input type="number" name="attr_Persona">
+                <button type="roll" value="/roll 1d20<@{Persona} Persona" name="roll_Persona"/>
+            </div>
+            <ul>
+                <fieldset class="repeating_PersonaSkills">
+                    <li>
+                        <input type="text" name="attr_skillname" />
+                        <input type="number" name="attr_skilllevel" />
+                        <input type="hidden" name="attr_skillmod" value="@{skilllevel}+@{Persona}" disabled="true" /> 
+                        <button type="roll" value="/roll 1d20<@{skillmod} Persona: @{skillname}" name="roll_skillcheck"/>
+                    </li>
+                </fieldset>
+            </ul>
+        </li>
+    </ul>
+</div> <!-- .section-skills -->
+
+<div class="sheet-break"></div>
+
+<div class="sheet-section-talents sheet-section sheet-half">
+    <div class="sheet-header">Talents</div>
+    <textarea name="attr_Talents"></textarea>
+</div> <!-- .section-stunts -->
+
+<div class="sheet-section-gear sheet-section sheet-half">
+    <div class="sheet-header">Gear</div>
+    <textarea name="attr_Gear"></textarea>
+</div> <!-- .section-extra -->
