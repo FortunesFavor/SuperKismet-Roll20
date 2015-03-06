@@ -21,10 +21,9 @@
                 <label>Level</label>
                 <input type="number" name="attr_Level" value="1" />
             </td>
-
         </tr>
     </table>
-</div> <!-- .section-basic -->
+</div>
 
 <div class="sheet-break"></div>
 
@@ -63,12 +62,12 @@
     <fieldset class="repeating_Aspects">
         <input type="text" name="attr_Aspect" />
     </fieldset>
-</div> <!-- .section-aspects -->
+</div>
 
 <div class="sheet-break"></div>
 
 <div class="sheet-section-consequences sheet-section sheet-half sheet-nobul">
-    <div class="sheet-header">Health</div>
+    <div class="sheet-header">Vitality</div>
     <input type="hidden" name="attr_Damage_max" value="4" />
     <ul>
         <li>
@@ -100,10 +99,6 @@
         <li>
             <label class="sheet-h-label">Edge</label>
             <input type="number" name="attr_Edge" value="@{Level}" /> / <input type="number" name="attr_Edge_max" value="@{Level}"  disabled="true" />
-        </li>
-        <li>
-            <label class="sheet-h-label">Initiative</label>
-            <button type="roll" value="/roll 1d20-@{Reflexes} &{tracker} Initiative!" name="roll_Initiative" />
         </li>
     </ul>
 </div>
